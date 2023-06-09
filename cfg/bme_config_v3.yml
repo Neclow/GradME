@@ -1,0 +1,29 @@
+# For Windows users, assumes that C:/ is the root
+repo_path: ./ # CHANGE
+
+# Path to FASTA data
+fasta_path: primates.fa # CHANGE
+
+# Substitution model
+substitution_model: F81
+
+# If True, use rooted trees
+rooted: False
+
+# Number of optimisation steps
+n_steps: 5000
+
+# Number of shuffle operations
+n_shuffles: 100
+
+# Optimizer
+optimizer: adafactor
+
+# Learning rate
+learning_rate: 1.5
+
+# Maximum number of iterations
+max_iter: 100
+
+# Tolerance for stopping criteria
+tol: 0.0000000001
