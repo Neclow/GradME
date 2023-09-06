@@ -6,6 +6,7 @@ This repo hosts a minimal implementation of ```GradME```
 * ```utils/```: Utility functions for manipulation of sequence and tree data.
 
 ## Environment setup
+0. Install [R](https://cran.r-project.org/) (version used here: 4.2.2) if needed. The latest version of R should also work.
 1. Setup the ```gradme``` environment using conda/mamba and activate the environment:
 ```
 conda env create -f env.yml
@@ -41,6 +42,7 @@ The following datasets were used:
 * [2] https://datadryad.org/stash/dataset/doi:10.5061/dryad.3629v
 * [3] https://datadryad.org/stash/dataset/doi:10.5061/dryad.r2n70
 * [4] https://evolution.gs.washington.edu/book/datasets.html
+    * Note: We provide the fasta conversion directly here in ```data/primates.fa```
 
 
 DS1-DS8 are also available at: https://github.com/zcrabbit/vbpi-gnn/tree/main/data/hohna_datasets_fasta
