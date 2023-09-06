@@ -1,8 +1,5 @@
-# For Windows users, assumes that C:/ is the root
-repo_path: ./ # CHANGE
-
 # Path to FASTA data
-fasta_path: primates.fa # CHANGE
+fasta_path: data/primates.fa # CHANGE
 
 # Substitution model
 substitution_model: F81
@@ -26,4 +23,4 @@ learning_rate: 1.5
 max_iter: 100
 
 # Tolerance for stopping criteria
-tol: 0.0000000001
+tol: 0.00000001

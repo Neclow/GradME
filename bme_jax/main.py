@@ -1,5 +1,9 @@
 # pylint: disable=invalid-name
+
+"""Main script."""
 import os
+
+from argparse import ArgumentParser
 
 import jax
 import jax.numpy as jnp
@@ -15,6 +19,26 @@ from utils.data import load_yaml_config
 
 
 os.environ["XLA_FLAGS"] = "--xla_force_host_platform_device_count=4"
+
+
+def parse_args():
+    """Parse main arguments."""
+    parser = ArgumentParser(description="GradME main arguments")
+
+    parser.add_argument(
+        "--config-path",
+        type=str,
+        help="Path to configuration file",
+    )
+
+    parser.add_argument(
+        "--fasta-path",
+        type=str,
+        default=None,
+        help="Path of FASTA file to analyse (will override fasta_path in the .yml config file)",
+    )
+
+    return parser.parse_args()
 
 
 def run(cfg):
@@ -128,5 +152,12 @@ def run(cfg):
 
 
 if __name__ == "__main__":
-    cfg_ = load_yaml_config("cfg/bme_config_v3.yml")
+    args = parse_args()
+
+    cfg_ = load_yaml_config(args.config_path)
+
+    # If fasta_path is provided in the args, overwrite the cfg argument
+    if args.fasta_path is not None:
+        cfg_.fasta_path = args.fasta_path
+
     run(cfg_)

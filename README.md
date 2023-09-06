@@ -49,5 +49,6 @@ Sources: see manuscript
 
 ## Running GradME
 1. Download the datasets (in the FASTA format) mentioned above and place them in a ```data/``` folder (e.g., in the repo)
-2. Update the configuration file ```cfg/bme_config_v3.yml```, especially ```repo_path``` and ```fasta_path```
-3. Run the main optimisation script: ```python -m bme_jax.main``` or use the ```demo.ipynb``` notebook
+2. Update the configuration file ```cfg/bme_config_v3.yml```, especially ```fasta_path``` (the path to the FASTA file you want to analyse)
+    * (You can also create your own configuration file based on the given template)
+3. Run the main optimisation script: ```python -m bme_jax.main --config-path cfg/name_of_your_config_file.yml``` or use the ```demo.ipynb``` notebook

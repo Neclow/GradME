@@ -1,6 +1,4 @@
 """Data loading."""
-from pathlib import Path
-
 import jax.numpy as jnp
 import rpy2.robjects as ro
 
@@ -35,7 +33,7 @@ def load_data(cfg):
     with localconverter(ro.default_converter + numpy2ri.converter):
         importr("phangorn")
 
-        ro.globalenv["Rpath"] = str(Path(cfg.repo_path, "data", cfg.fasta_path))
+        ro.globalenv["Rpath"] = cfg.fasta_path
         ro.globalenv["model"] = cfg.substitution_model
 
         # DNA Evolution model: F81 + Gamma
