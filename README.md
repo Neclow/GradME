@@ -6,9 +6,10 @@ This repo hosts a minimal implementation of ```GradME```
 * ```utils/```: Utility functions for manipulation of sequence and tree data.
 
 ## Environment setup
-1. Setup the ```gradme``` environment using conda/mamba:
+1. Setup the ```gradme``` environment using conda/mamba and activate the environment:
 ```
 conda env create -f env.yml
+conda activate gradme
 ```
 2. Optional: if you have GPUs/TPUs, you might need to update your installation of Jax. Follow the instructions at https://github.com/google/jax
 3. Install ```phangorn``` in R (4.2.2 or above):
